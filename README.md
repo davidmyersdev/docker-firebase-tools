@@ -2,7 +2,11 @@
 
 A docker container for https://firebase.google.com/docs/cli - aka firebase-tools
 
-###  Usage
+##  Usage
+
+### TLDR
+
+Running the container will run `firebase --non-interactive emulators:start`. The `firebase.json` file included in this project will start a Firestore emulator (at port `8080`) and the Emulator Suite UI (at port `4000` - if you pass a project id). To override this behavior, you can provide your own config files [using the instructions below](#use-your-own-firebase-config).
 
 ### Docker Run
 
