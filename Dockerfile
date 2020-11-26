@@ -22,6 +22,7 @@ EXPOSE 5001
 EXPOSE 8080
 EXPOSE 8085
 EXPOSE 9000
+EXPOSE 9099
 # 9005 is used by `firebase login:ci`
 EXPOSE 9005
 ENTRYPOINT ["/firebase/entrypoint.sh"]
