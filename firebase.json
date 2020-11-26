@@ -6,19 +6,7 @@
     "auth": {
       "host": "0.0.0.0"
     },
-    "database": {
-      "enabled": false,
-      "host": "0.0.0.0"
-    },
     "firestore": {
-      "host": "0.0.0.0"
-    },
-    "functions": {
-      "enabled": false,
-      "host": "0.0.0.0"
-    },
-    "pubsub": {
-      "enabled": false,
       "host": "0.0.0.0"
     },
     "ui": {
