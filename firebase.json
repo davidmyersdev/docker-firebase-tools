@@ -1,12 +1,27 @@
 {
+  "database": {
+    "rules": "database.rules.json"
+  },
   "firestore": {
-    "rules": "firestore-dev.rules"
+    "rules": "firestore.rules"
+  },
+  "storage": {
+    "rules": "storage.rules"
   },
   "emulators": {
     "auth": {
       "host": "0.0.0.0"
     },
+    "database": {
+      "host": "0.0.0.0"
+    },
     "firestore": {
+      "host": "0.0.0.0"
+    },
+    "pubsub": {
+      "host": "0.0.0.0"
+    },
+    "storage": {
       "host": "0.0.0.0"
     },
     "ui": {
