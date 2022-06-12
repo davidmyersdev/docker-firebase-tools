@@ -1,4 +1,4 @@
-# docker-firebase-cli
+# docker-firebase-tools
 
 A docker container for https://firebase.google.com/docs/cli - aka firebase-tools
 
@@ -11,7 +11,7 @@ Running the container will run `firebase --non-interactive emulators:start`. The
 ### Docker Run
 
 ```shell
-docker run --rm -it -e FIREBASE_PROJECT_ID=project-123 -p 4000:4000 -p 8080:8080 -p 9099:9099 voraciousdev/firebase-cli
+docker run --rm -it -e FIREBASE_PROJECT_ID=project-123 -p 4000:4000 -p 8080:8080 -p 9099:9099 voraciousdev/firebase-tools
 ```
 
 #### Firebase CLI Authorization
@@ -22,7 +22,7 @@ Generate the authorization URL.
 
 ```shell
 # port 9005 is required for the oauth redirect
-docker run --rm -it -e FIREBASE_PROJECT_ID=project-123 -p 9005:9005 voraciousdev/firebase-cli login:ci
+docker run --rm -it -e FIREBASE_PROJECT_ID=project-123 -p 9005:9005 voraciousdev/firebase-tools login:ci
 ```
 
 This should give you a URL similar to the following.
@@ -36,7 +36,7 @@ Visit this URL on your host machine to authorize Firebase CLI via OAuth. After a
 Run the docker container with the auth token as `FIREBASE_TOKEN` to use any `firebase-tools` features that require authorization. This token can be reused across containers, but you can always generate a new one by following the steps above.
 
 ```shell
-docker run --rm -it -e FIREBASE_TOKEN=token-123 -e FIREBASE_PROJECT_ID=project-123 -p 4000:4000 -p 8080:8080 -p 9099:9099 voraciousdev/firebase-cli
+docker run --rm -it -e FIREBASE_TOKEN=token-123 -e FIREBASE_PROJECT_ID=project-123 -p 4000:4000 -p 8080:8080 -p 9099:9099 voraciousdev/firebase-tools
 ```
 
 ### Docker Compose
@@ -52,7 +52,7 @@ services:
     environment:
       - FIREBASE_PROJECT_ID=${FIREBASE_PROJECT_ID}
       - FIREBASE_TOKEN=${FIREBASE_TOKEN}
-    image: voraciousdev/firebase-cli
+    image: voraciousdev/firebase-tools
     ports:
       - 4000:4000 # emulator suite ui
       - 8080:8080 # firestore
@@ -124,7 +124,7 @@ Note the alternative ports chosen.
 Note the matching port bindings and the new `-v` argument. The host path is `/home/firebase` and the guest path (in your container) is `/firebase/volume`.
 
 ```shell
-docker run --rm -it -e FIREBASE_PROJECT_ID=project-123 -v /home/firebase:/firebase/volume -p 1234:1234 -p 2345:2345 -p 3456:3456 voraciousdev/firebase-cli
+docker run --rm -it -e FIREBASE_PROJECT_ID=project-123 -v /home/firebase:/firebase/volume -p 1234:1234 -p 2345:2345 -p 3456:3456 voraciousdev/firebase-tools
 ```
 
 #### Docker Compose
@@ -140,7 +140,7 @@ services:
     environment:
       - FIREBASE_PROJECT_ID=${FIREBASE_PROJECT_ID}
       - FIREBASE_TOKEN=${FIREBASE_TOKEN}
-    image: voraciousdev/firebase-cli
+    image: voraciousdev/firebase-tools
     ports:
       - 1234:1234 # auth
       - 2345:2345 # firestore
