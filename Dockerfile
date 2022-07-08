@@ -30,4 +30,4 @@ EXPOSE 9199
 EXPOSE 9005
 ENTRYPOINT ["/firebase/entrypoint.sh"]
 # the default operation is running the emulators
-CMD ["--non-interactive", "emulators:start"]
+CMD ["--non-interactive", "emulators:start", "--import", "./data", "--export-on-exit", "./data"]
